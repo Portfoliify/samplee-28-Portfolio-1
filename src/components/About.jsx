@@ -36,7 +36,7 @@ const About = ({
           </span>
           <p>
             {about1ParagraphBefore}
-            <span className=".color-text">{about1Highlight}</span>{" "}
+            <span className="color-text">{about1Highlight}</span>{" "}
             {about1ParagraphAfter}
           </p>
         </div>
@@ -49,9 +49,9 @@ const About = ({
           <img id="photographer-2" src={about2ImageSource2} alt="" />
         </div>
         <div id="intro-2">
-          <h2>
+        <h2>
             {about2HeadingTextBefore}{" "}
-            <span className=".color-text">{about2HeadingHighlight}</span>{" "}
+            <span className="color-text">{about2HeadingHighlight}</span>{" "}
             {about2HeadingTextAfter}{" "}
           </h2>
           <span className="magic-star">

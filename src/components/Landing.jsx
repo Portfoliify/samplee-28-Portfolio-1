@@ -40,30 +40,62 @@ const Landing = () => {
   const about1ImageSource = pic9;
   const about2ImageSource2 = pic10;
   //Content
-
-        const emailAddress = "sample@gmail.com";
-        const navName = "first";
-        const about1FullParagraph = "Hi I am Mohan, As a $photographer I am dedicated to transforming ordinary moments into extraordinary memories.";
-        const about2HeadingFullText = "My Lens, Your $Story";
-        const about2Paragraph = "With a passion for capturing fleeting moments and transforming them into lasting memories, I embark on a visual journey, guided by the light and emotions that surround me. My photography transcends mere images, weaving together narratives that resonate with viewers on a deeper level. Whether it's the raw energy of a live performance, the quiet intimacy of a wedding, or the timeless beauty of a landscape, I strive to create images that reflect the essence of the subject and evoke a sense of connection.";  
-        const about3Paragraph = "If you are looking to discuss a project or just talk photography";
-        const linkedInLink = "https://linkedin.com";
-        const instagramLink = "https://instagram.com";
-        const twitterLink = "https://twitter.com";
-//Content
+  const emailAddress = "mohanakrishnang05@gmail.com";
+  const navName = "Mohana krishnan";
+  const about1FullParagraph =
+    "Hi I am Mohan, As a $photographer I am dedicated to transforming ordinary moments into extraordinary memories.";
+  const about2HeadingFullText = "My Lens, Your $Story";
+  const about2Paragraph =
+    "With a passion for capturing fleeting moments and transforming them into lasting memories, I embark on a visual journey, guided by the light and emotions that surround me. My photography transcends mere images, weaving together narratives that resonate with viewers on a deeper level. Whether it's the raw energy of a live performance, the quiet intimacy of a wedding, or the timeless beauty of a landscape, I strive to create images that reflect the essence of the subject and evoke a sense of connection.";
+  const about3Paragraph =
+    "If you are looking to a project or just talk photography";
+  const linkedInLink = "https://linkedin.com";
+  const instagramLink = "https://instagram.com";
+  const twitterLink = "http://twitter.com";
+  //Content
   let about2HeadingHighlight = "",
-    about2HeadingTextBefore = about2HeadingFullText,
-    about2HeadingTextAfter = "",
-    about1Highlight = "",
-    about1ParagraphBefore = about1FullParagraph,
-    about1ParagraphAfter = "";
-  //Highlight matching
-  const firstDollarIndex2 = about2HeadingFullText.indexOf("$");
-  if (firstDollarIndex2 !== -1) {
-    const firstSpace2 = about2HeadingFullText.indexOf(
-      " ",
-      firstDollarIndex2 + 1
+  about2HeadingTextBefore = about2HeadingFullText,
+  about2HeadingTextAfter = "",
+  about1Highlight = "",
+  about1ParagraphBefore = about1FullParagraph,
+  about1ParagraphAfter = "";
+//Highlight matching
+//first paragraph
+const firstDollarIndex1 = about1FullParagraph.indexOf("$");
+if (firstDollarIndex1 !== -1) {
+  const firstSpace1 = about1FullParagraph.indexOf(" ", firstDollarIndex1 + 1);
+  if(firstSpace1 !== -1) {
+    about1Highlight = about1FullParagraph.substring(
+      firstDollarIndex1 + 1,
+      firstSpace1
     );
+    about1ParagraphBefore = about1FullParagraph.substring(
+      0,
+      firstDollarIndex1
+    );
+    about1ParagraphAfter = about1FullParagraph.substring(firstSpace1);
+  }
+  else{
+    about1Highlight = about1FullParagraph.substring(
+      firstDollarIndex1 + 1
+    );
+    about1ParagraphBefore = about1FullParagraph.substring(
+      0,
+      firstDollarIndex1
+    );
+    about1ParagraphAfter = ""
+  }
+
+  
+}
+//second paragraph
+const firstDollarIndex2 = about2HeadingFullText.indexOf("$");
+if (firstDollarIndex2 !== -1) {
+  const firstSpace2 = about2HeadingFullText.indexOf(
+    " ",
+    firstDollarIndex2 + 1
+  );
+  if (firstSpace2 !== -1) {
     about2HeadingHighlight = about2HeadingFullText.substring(
       firstDollarIndex2 + 1,
       firstSpace2
@@ -74,20 +106,18 @@ const Landing = () => {
     );
     about2HeadingTextAfter = about2HeadingFullText.substring(firstSpace2);
   }
-
-  const firstDollarIndex1 = about1FullParagraph.indexOf("$");
-  if (firstDollarIndex1 !== -1) {
-    const firstSpace1 = about1FullParagraph.indexOf(" ", firstDollarIndex1 + 1);
-    about1Highlight = about1FullParagraph.substring(
-      firstDollarIndex1 + 1,
-      firstSpace1
+  else{
+    about2HeadingHighlight = about2HeadingFullText.substring(
+      firstDollarIndex2 + 1
     );
-    about1ParagraphBefore = about2HeadingFullText.substring(
+    about2HeadingTextBefore = about2HeadingFullText.substring(
       0,
-      firstDollarIndex1
+      firstDollarIndex2
     );
-    about1ParagraphAfter = about2HeadingFullText.substring(firstSpace1);
+    about2HeadingTextAfter = ""
   }
+  
+}
 
   const mailtoLink = `mailto:${emailAddress}`;
   const [loaded, setLoaded] = useState(false);
